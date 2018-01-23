@@ -87,11 +87,8 @@ class MainVC: UIViewController {
                 
                 guard let json = try? JSONSerialization.jsonObject(with: unwrappedData, options: []) else { return }
                 let dict = json as! [String: Any]
-               // print(dict)
                 if let paging = dict["paging"] as? [String: Any], let next = paging["next"] as? String {
-                    //print(next)
                     self.nextURL = self.baseURL + next
-                    //print(self.nextURL)
                 } else {
                     self.nextURL = nil
                 }

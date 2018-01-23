@@ -22,3 +22,16 @@ Feel free to send us any questions that might arise along the way. And good luck
 
 *Note: You can obtain an OAuth token [here](https://developer.vimeo.com/apps).*  
 *Note: The use of third party libraries is not allowed. Submissions that leverage third party code will be disqualified.*
+
+Changes I've Made
+ - Spelling error in navigation title
+ - Used NSURLSession to load api requests (Included caching)
+ - Created a custom tableview cell to from a Xib file to display videos
+     - Can see thumbnail, video duration, video title, video author, author profile image, video plays, video likes, how long ago video was uploaded, and video comments
+    - Created a Video struct to hold all the data for each tableview cell (includes an init to parse json data)
+- Added pagination so that new videos from next pages are only requested when user scrolls to the end of the current page in the tableview
+-  Added error handling of basic HTTP error responses and NSURLSession errors (shows alert when error occurs)
+  - Added a loading indicator when new pages and app is loading to communicate app state to user
+ -Added function to watch video in web browser when you click on a tableview cell
+ - Added image cacheing using NSCache and indexing via URL string
+ 
